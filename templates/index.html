@@ -1,0 +1,56 @@
+<!-- I borrowed some of the formatting for this from Finance -->
+
+{% extends "layout.html" %}
+
+{% block title %}
+    CryptoPulse
+{% endblock %}
+
+{% block main %}
+    <h1>Welcome to <span class="name1">Crypto</span><span class="name2">Pulse</span>!</h1>
+    <h5>On CryptoPulse you can track updates for crypto and blockchain projects on Discord.</h5>
+    <h5>Here are your current queries:</h5>
+    {% if queries %}
+    <!-- Display's users queries -->
+    <table class="table table-striped table-bordered table-hover">
+        <thead>
+            <tr>
+                <th style="text-align: left">Server</th>
+                <th style="text-align: left">Channel</th>
+                <th style="text-align: right">Keyword</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Loop through the query information to display in this table -->
+            {% for query in queries %}
+            
+            <tr>
+                <td style="text-align: left">
+                    {{ query.server }}
+                </td>
+                <td style="text-align: left">
+                    {{ query.channel }}
+                </td>
+                <td style="text-align: right">
+                    {{ query.keyword }}
+                </td>
+                <!-- Include delete button -->
+                <td style="text-align: right">
+                    <form action="/" method="post">
+                        <button class="btn btn-danger" type="submit" name="delete" value={{ query.id }}>Delete</button>
+                    </form>
+                </td>
+            </tr>
+
+            {% endfor %}
+        </tbody>
+    </table>
+    
+    <!-- If there are no queries yet, alert the user -->
+    {% else %}
+
+    <p>No queries yet. Go to <a href="/add">Add Query</a> to get started.</p>
+
+    {% endif %}
+{% endblock %}

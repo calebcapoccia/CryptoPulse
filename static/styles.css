@@ -1,0 +1,32 @@
+/* I used the navbar css code from Finance, but I modified the colors */
+
+/* Size for brand */
+nav .navbar-brand
+{
+    font-size: xx-large;
+}
+
+/* Colors for brand */
+nav .navbar-brand .blue
+{
+    color: #03449E;
+}
+nav .navbar-brand .red
+{
+    color: #9E0D05;
+}
+.name1
+{
+    color: #03449E;
+}
+.name2
+{
+    color: #9E0D05;
+}
+
+/* Formatting of main content */
+.content
+{
+    padding-left: 50px;
+    padding-right: 50px;
+}

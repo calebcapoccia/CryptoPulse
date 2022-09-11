@@ -1,0 +1,31 @@
+<!-- I borrowed this code from Finance, except I added more registration fields -->
+
+{% extends "layout.html" %}
+
+{% block title %}
+    Register
+{% endblock %}
+
+{% block main %}
+    <p>Watch <a href="https://www.youtube.com/watch?v=YEgFvgg7ZPI&t=92s" target="_blank">this video</a> to find your <b>Discord token</b>. In order to create an 
+    account on CryptoPulse, you must join the <b><a href="https://discord.gg/QGqFyawCxj" target="_blank">verification server</a></b> with the account associated 
+    with the Discord token you submit in this form.</p>
+    <form action="/register" method="post">
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="username" name="username" placeholder="Username" type="text">
+        </div>
+        <div class="mb-3">
+            <input class="form-control mx-auto w-auto" id="password" name="password" placeholder="Password" type="password">
+        </div>
+        <div class="mb-3">
+            <input class="form-control mx-auto w-auto" id="confirmation" name="confirmation" placeholder="Confirm Password" type="password">
+        </div>
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="token" name="token" placeholder="Discord Token" type="text">
+        </div>
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="email" name="email" placeholder="Email" type="email">
+        </div>
+        <button class="btn btn-primary" type="submit">Register</button>
+    </form>
+{% endblock %}

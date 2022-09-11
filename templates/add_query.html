@@ -1,0 +1,30 @@
+<!-- I borrowed some of the formatting for this from Finance -->
+
+{% extends "layout.html" %}
+
+{% block title %}
+    Add Query
+{% endblock %}
+
+{% block main %}
+    <h1>Looking to get another update? Add an update query here.</h1> 
+    <p>The <b>channel ID</b> is for the text channel where you want us to look for updates. To find the channel ID, follow the steps 
+    <a href="https://www.remote.tools/remote-work/how-to-find-discord-id" target="_blank">here</a>. The <b>keyword</b> (CASE INSENSITIVE) is the specific word or 
+    phrase you want us to find updates for. The <b>server</b> and <b>channel</b> names are just for you to remember what server and text channel the query is for; 
+    you can name them whatever you'd like! <b>NOTE:</b> The channel ID must be for a text channel. Voice channels will not return updates.</p> 
+    <form action="/add" method="post">
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="channel_id" name="channel_id" placeholder="Channel ID" type="number">
+        </div>
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="keyword" name="keyword" placeholder="Keyword" type="text">
+        </div>
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="server" name="server" placeholder="Server Name" type="text">
+        </div>
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="channel" name="channel" placeholder="Channel Name" type="text">
+        </div>
+        <button class="btn btn-primary" type="submit">Add Query</button>
+    </form>
+{% endblock %}
